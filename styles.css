@@ -1,0 +1,239 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #6a0dad, #8a2be2); /* Purple gradient background */
+    color: #333;
+}
+
+.sidebar {
+    width: 80px;
+    background: linear-gradient(to bottom, #4a90e2, #9013fe);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%; /* Make the logo circular */
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.sidebar-buttons {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sidebar-button {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.8rem;  /* Increased size for better visibility */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 50%;  /* Make the buttons circular */
+    background: rgba(255, 255, 255, 0.2);  /* Slightly transparent background */
+}
+
+.sidebar-button:hover {
+    transform: scale(1.2);  /* Make the buttons grow on hover */
+    background: rgba(255, 255, 255, 0.4);  /* Lighten the background on hover */
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px; /* To avoid overlap with sidebar */
+    padding-top: 20px; /* Spacing for header */
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+}
+
+.tabs {
+    display: flex;
+    gap: 20px;
+}
+
+.tab-button {
+    background-color: rgba(255, 255, 255, 0.2); /* Match sidebar button style */
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.tab-button.active {
+    background-color: rgba(255, 255, 255, 0.4); /* Match hover state of sidebar buttons */
+}
+
+.tab-button:hover {
+    transform: scale(1.1);
+}
+
+.wallpaper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.wallpaper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #b8e994;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.wallpaper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.wallpaper:hover {
+    transform: scale(1.05);  /* Enlarge slightly on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Reduced shadow for a subtler effect */
+}
+
+/* Footer styling for mobile layout */
+@media screen and (max-width: 768px) {
+    footer {
+        display: flex;
+        justify-content: space-around;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.2);  /* Same style as sidebar buttons */
+        padding: 10px 0;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .footer-button {
+        color: #fff;
+        font-size: 1.8rem;  /* Increased size for better visibility */
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+    }
+
+    .footer-button:hover {
+        transform: scale(1.2);
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Hide sidebar on mobile */
+    .sidebar {
+        display: none;
+    }
+
+    .content {
+        padding-left: 0;
+    }
+
+    header {
+        justify-content: center;
+    }
+}
+
+/* Other CSS remains the same */
+
+/* Other CSS remains the same */
+
+/* Other CSS remains the same */
+
+/* Fullscreen overlay styling */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black; /* Ensures full screen is covered */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensures it's above all other elements */
+}
+
+.overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.overlay-button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    position: absolute;
+    z-index: 1001; /* Ensure buttons are on top of the image */
+}
+
+.overlay-button.back-btn {
+    top: 20px;
+    left: 20px;
+}
+
+.overlay-button.download-btn {
+    bottom: 20px;
+    right: 20px;
+}
+
+
+
+
+/* Desktop-specific footer styling (if needed) */
+@media screen and (min-width: 769px) {
+    footer {
+        display: none; /* Keep footer hidden on desktop */
+    }
+}

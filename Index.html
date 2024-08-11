@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpaper Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fas fa-rocket"></i> <!-- Logo icon -->
+        </div>
+        <div class="sidebar-buttons">
+            <div class="sidebar-button">
+                <i class="fab fa-facebook"></i> <!-- Facebook icon -->
+            </div>
+            <div class="sidebar-button">
+                <i class="fab fa-instagram"></i> <!-- Instagram icon -->
+            </div>
+            <div class="sidebar-button">
+                <i class="fab fa-tiktok"></i> <!-- TikTok icon -->
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <header>
+            <div class="tabs">
+                <button class="tab-button active">Editor's choice</button>
+                <button class="tab-button">My fav</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="wallpaper-grid">
+                <div class="wallpaper" onclick="openWallpaper(this)">
+                    <img src="https://images.unsplash.com/photo-1495978866932-92dbc079e62e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wallpaper 1">
+                </div>
+                <div class="wallpaper" onclick="openWallpaper(this)">
+                    <img src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wallpaper 2">
+                </div>
+                <div class="wallpaper" onclick="openWallpaper(this)">
+                    <img src="https://images.unsplash.com/photo-1492760864391-753aaae87234?q=80&w=1926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wallpaper 3">
+                </div>
+                <div class="wallpaper" onclick="openWallpaper(this)">
+                    <img src="https://images.unsplash.com/photo-1505322022379-7c3353ee6291?q=80&w=1500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wallpaper 4">
+                </div>
+                <div class="wallpaper" onclick="openWallpaper(this)">
+                    <img src="https://images.unsplash.com/photo-1501975558162-0be7b8ca95ea?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wallpaper 5">
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-button">
+                <i class="fab fa-facebook"></i>
+            </div>
+            <div class="footer-button">
+                <i class="fab fa-instagram"></i>
+            </div>
+            <div class="footer-button">
+                <i class="fab fa-tiktok"></i>
+            </div>
+        </footer>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <button class="overlay-button back-btn" onclick="closeWallpaper()">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <button class="overlay-button download-btn" id="downloadOverlayBtn">
+            <i class="fas fa-download"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
