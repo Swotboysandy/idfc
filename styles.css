@@ -83,8 +83,10 @@ header {
     gap: 20px;
 }
 
-.tab-button {
-    background-color: rgba(255, 255, 255, 0.2); /* Match sidebar button style */
+/* Ensure Poppins is applied to menu buttons */
+.tabs .tab-button {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(255, 255, 255, 0.2);
     border: none;
     padding: 10px 20px;
     color: white;
@@ -95,13 +97,12 @@ header {
 }
 
 .tab-button.active {
-    background-color: rgba(255, 255, 255, 0.4); /* Match hover state of sidebar buttons */
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .tab-button:hover {
     transform: scale(1.1);
 }
-
 .wallpaper-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
