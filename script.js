@@ -1,12 +1,16 @@
 function openWallpaper(element) {
     const overlay = document.getElementById('overlay');
+    const downloadButton = document.getElementById('downloadOverlayBtn');
     
     // Clear any existing content in the overlay
     overlay.innerHTML = '';
 
+    // Get the image source
+    const imgSrc = element.querySelector('img').src;
+
     // Create and append the wallpaper image to the overlay
     const overlayImage = document.createElement('img');
-    overlayImage.src = element.querySelector('img').src;
+    overlayImage.src = imgSrc;
     overlayImage.style.width = '100%';
     overlayImage.style.height = '100%';
     overlayImage.style.objectFit = 'cover';
@@ -19,10 +23,9 @@ function openWallpaper(element) {
     backButton.onclick = closeWallpaper;
     overlay.appendChild(backButton);
 
-    // Add the download button
-    const downloadButton = document.createElement('button');
-    downloadButton.classList.add('overlay-button', 'download-btn');
-    downloadButton.innerHTML = '<i class="fas fa-download"></i>';
+    // Add the download button/link
+    downloadButton.href = imgSrc;  // Set the href to the image source
+    downloadButton.download = 'wallpaper.jpg';  // Set the default filename
     overlay.appendChild(downloadButton);
 
     // Display the overlay and buttons immediately
@@ -55,3 +58,33 @@ function closeWallpaper() {
         document.msExitFullscreen();
     }
 }
+
+document.getElementById("pcButton").addEventListener("click", function() {
+    // Remove active class from mobile button and add to pc button
+    document.getElementById("mobileButton").classList.remove("active");
+    this.classList.add("active");
+    
+    let images = document.querySelectorAll(".image");
+    images.forEach(function(image) {
+        if (image.classList.contains("landscape") && !image.classList.contains("mobile-only")) {
+            image.style.display = "block";  // Show images for PC
+        } else {
+            image.style.display = "none";  // Hide all non-PC images
+        }
+    });
+});
+
+document.getElementById("mobileButton").addEventListener("click", function() {
+    // Remove active class from pc button and add to mobile button
+    document.getElementById("pcButton").classList.remove("active");
+    this.classList.add("active");
+
+    let images = document.querySelectorAll(".image");
+    images.forEach(function(image) {
+        if (image.classList.contains("mobile-only") || !image.classList.contains("remove-for-pc")) {
+            image.style.display = "block";  // Show mobile-only images and those not removed for PC
+        } else {
+            image.style.display = "none";  // Hide PC-specific images
+        }
+    });
+});

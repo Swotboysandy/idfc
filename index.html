@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wallpaper Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="sidebar">
         <div class="logo">
-            <i class="fas fa-rocket"></i> <!-- Logo icon -->
+            <i class="fab fa-waze"></i> <!-- Waze icon -->
         </div>
         <div class="sidebar-buttons">
             <div class="sidebar-button">
-                <i class="fab fa-facebook"></i> <!-- Facebook icon -->
+                <i class="fas fa-fire"></i> <!-- Fire bowl icon -->
             </div>
             <div class="sidebar-button">
-                <i class="fab fa-instagram"></i> <!-- Instagram icon -->
+                <i class="fas fa-th-large"></i> <!-- Block-style menu icon -->
             </div>
             <div class="sidebar-button">
-                <i class="fab fa-tiktok"></i> <!-- TikTok icon -->
+                <i class="fas fa-heart"></i> <!-- Heart icon -->
             </div>
         </div>
     </div>
@@ -30,41 +29,64 @@
     <div class="content">
         <header>
             <div class="tabs">
-                <button class="tab-button active">Editor's choice</button>
-                <button class="tab-button">My fav</button>
+                <button id="mobileButton">Mobile</button>
+                <button id="pcButton">PC</button>
             </div>
         </header>
 
         <main>
             <div class="wallpaper-grid">
-                <div class="wallpaper" onclick="openWallpaper(this)">
-                    <img src="https://images.unsplash.com/photo-1495978866932-92dbc079e62e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wallpaper 1">
+                <!-- Wallpaper images for Mobile -->
+                <div class="wallpaper image mobile-only" onclick="openWallpaper(this)">
+                    <img src="img/image%20(1).png" alt="Wallpaper 1">
                 </div>
-                <div class="wallpaper" onclick="openWallpaper(this)">
-                    <img src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wallpaper 2">
+                <div class="wallpaper image mobile-only" onclick="openWallpaper(this)">
+                    <img src="img/image%20(2).png" alt="Wallpaper 2">
                 </div>
-                <div class="wallpaper" onclick="openWallpaper(this)">
-                    <img src="https://images.unsplash.com/photo-1492760864391-753aaae87234?q=80&w=1926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wallpaper 3">
+                <div class="wallpaper image mobile-only" onclick="openWallpaper(this)">
+                    <img src="img/image%20(3).png" alt="Wallpaper 3">
                 </div>
-                <div class="wallpaper" onclick="openWallpaper(this)">
-                    <img src="https://images.unsplash.com/photo-1505322022379-7c3353ee6291?q=80&w=1500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wallpaper 4">
+                <div class="wallpaper image mobile-only" onclick="openWallpaper(this)">
+                    <img src="img/image%20(4).png" alt="Wallpaper 4">
                 </div>
-                <div class="wallpaper" onclick="openWallpaper(this)">
-                    <img src="https://images.unsplash.com/photo-1501975558162-0be7b8ca95ea?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wallpaper 5">
+                <div class="wallpaper image mobile-only" onclick="openWallpaper(this)">
+                    <img src="img/image%20(5).png" alt="Wallpaper 5">
                 </div>
-            </div>
+        
+                <!-- Wallpaper images for PC -->
+                <div class="wallpaper image landscape remove-for-pc" onclick="openWallpaper(this)">
+                    <img src="img/image%20(6).png" alt="Wallpaper 6">
+                </div>
+                <div class="wallpaper image landscape remove-for-pc" onclick="openWallpaper(this)">
+                    <img src="img/image%20(7).png" alt="Wallpaper 7">
+                </div>
+                <div class="wallpaper image landscape remove-for-pc" onclick="openWallpaper(this)">
+                    <img src="img/image%20(8).png" alt="Wallpaper 8">
+                </div>
+                <div class="wallpaper image landscape remove-for-pc" onclick="openWallpaper(this)">
+                    <img src="img/image%20(9).png" alt="Wallpaper 9">
+                </div>
+                <div class="wallpaper image landscape remove-for-pc" onclick="openWallpaper(this)">
+                    <img src="img/image%20(10).png" alt="Wallpaper 10">
+                </div>
+                <div class="wallpaper image landscape remove-for-pc" onclick="openWallpaper(this)">
+                    <img src="img/image%20(11).png" alt="Wallpaper 11">
+                </div>
+        
+                
         </main>
+        
 
         <footer>
             <div class="footer-button">
-                <i class="fab fa-facebook"></i>
+                <i class="fas fa-fire"></i> <!-- Fire bowl icon -->
             </div>
             <div class="footer-button">
-                <i class="fab fa-instagram"></i>
+                <i class="fas fa-th-large"></i> <!-- Block-style menu icon -->
             </div>
             <div class="footer-button">
-                <i class="fab fa-tiktok"></i>
-            </div>
+                <i class="fas fa-heart"></i> <!-- Heart icon -->
+            </div>            
         </footer>
     </div>
 
@@ -72,9 +94,9 @@
         <button class="overlay-button back-btn" onclick="closeWallpaper()">
             <i class="fas fa-arrow-left"></i> <!-- Back button icon -->
         </button>
-        <button class="overlay-button download-btn" id="downloadOverlayBtn">
+        <a id="downloadOverlayBtn" class="overlay-button download-btn" download>
             <i class="fas fa-download"></i> <!-- Download button icon -->
-        </button>
+        </a>
     </div>
 
     <script src="script.js"></script>
